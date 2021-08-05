@@ -20,10 +20,6 @@ from . import *
 Owner_info_msg = f"""
 <strong>Owner</strong> - {OWNER_NAME}
 <stong>OwnerID</strong> - <code>{OWNER_ID}</code>
-
-<strong>Message Forwards</strong> - {udB.get("PMBOT")}
-
-<stong>Ultroid <a href=https://github.com/TeamUltroid/Ultroid>[v{ultroid_version}]</a>, powered by @TeamUltroid</strong>
 """
 
 _settings = [
@@ -85,8 +81,8 @@ async def ultroid(event):
                 if udB.get("PMBOT") == "True":
                     ok = "You can contact my master using this bot!!\n\nSend your Message, I will Deliver it To Master."
                 await event.reply(
-                    f"Hey there [{get_display_name(u)}](tg://user?id={u.id}), this is Ultroid Assistant of [{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})!\n\n{ok}",
-                    buttons=[Button.inline("Info.", data="ownerinfo")],
+                    f"Hey there [{get_display_name(u)}](tg://user?id={u.id}), this is assistant of [{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})!",
+                    buttons=[Button.inline("Owner Info", data="ownerinfo")],
                 )
             else:
                 me = f"[{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})"
