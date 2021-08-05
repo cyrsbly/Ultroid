@@ -783,7 +783,7 @@ async def in_pm_ans(event):
                         Button.inline("Warns", data=f"admin_only{from_user}"),
                         Button.inline(wrns, data="do_nothing"),
                     ],
-                    [Button.inline("Message 📫", "Owner's Channel", url="https://t.me/saibubo")],
+                    [InlineKeyboardButton("Owner's Channel", url="https://t.me/saibubo")],
                 ],
             )
         ]
