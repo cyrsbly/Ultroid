@@ -66,7 +66,7 @@ UND = get_string("pmperm_1")
 
 if not Redis("PM_TEXT"):
     UNAPPROVED_MSG = """
-**PMSecurity of {ON}!**
+**PM of {ON}!**
 
 {UND}
 
@@ -74,7 +74,7 @@ You have {warn}/{twarn} warnings!"""
 else:
     UNAPPROVED_MSG = (
         """
-**PMSecurity of {ON}!**"""
+**PM of {ON}!**"""
         f"""
 
 {Redis("PM_TEXT")}
@@ -777,7 +777,7 @@ async def in_pm_ans(event):
         [
             await event.builder.article(
                 title="Inline PMPermit.",
-                text=f"**PMSecurity of {OWNER_NAME}!**",
+                text=f"**PM of {OWNER_NAME}!**",
                 buttons=[
                     [
                         Button.inline("Warns", data=f"admin_only{from_user}"),
@@ -833,7 +833,7 @@ async def edt(event):
         warns = "?"
     wrns = f"{warns}/{WARNS}"
     await event.edit(
-        f"**PMSecurity of {OWNER_NAME}!**",
+        f"**PM of {OWNER_NAME}!**",
         buttons=[
             [
                 Button.inline("Warns", data=f"admin_only{from_user}"),
