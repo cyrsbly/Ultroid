@@ -86,14 +86,14 @@ async def ultroid(event):
                     ok = "You can contact my master using this bot!!\n\nSend your Message, I will Deliver it To Master."
                 await event.reply(
                     f"Hey there [{get_display_name(u)}](tg://user?id={u.id}), this is Ultroid Assistant of [{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})!\n\n{ok}",
-                    buttons=[Button.inline("Info.", data="ownerinfo")],
+                    buttons=[InlineKeyboardButton("Owner's Channel", url="https://t.me/saibubo")],
                 )
             else:
                 me = f"[{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})"
                 mention = f"[{get_display_name(u)}](tg://user?id={u.id})"
                 await event.reply(
                     Redis("STARTMSG").format(me=me, mention=mention),
-                    buttons=[Button.inline("Info.", data="ownerinfo")],
+                    buttons=[InlineKeyboardButton("Owner's Channel", url="https://t.me/saibubo")],
                 )
         else:
             name = get_display_name(event.sender_id)
