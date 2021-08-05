@@ -17,9 +17,9 @@ from plugins import *
 
 from . import *
 
-Owner_info_msg = f"""
+Owner_info_msgg = f"""
 <strong>Owner</strong> - {OWNER_NAME}
-<stong>OwnerID</strong> - <code>{OWNER_ID}</code>
+<stong>OwnerID</strong> - {OWNER_ID}
 """
 
 _settings = [
@@ -49,11 +49,10 @@ _start = [
 ]
 
 
-@callback("ownerinfo")
+@callback("ownerinfoo")
 async def own(event):
     await event.edit(
-        Owner_info_msg,
-        buttons=[Button.inline("Close", data=f"closeit")],
+        Owner_info_msgg,
         link_preview=False,
         parse_mode="html",
     )
@@ -82,14 +81,14 @@ async def ultroid(event):
                     ok = "You can contact my master using this bot!!\n\nSend your Message, I will Deliver it To Master."
                 await event.reply(
                     f"Hey there [{get_display_name(u)}](tg://user?id={u.id}), this is assistant of [{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})!",
-                    buttons=[InlineKeyboardButton("Owner's Channel", url="https://t.me/saibubo")],
+                    buttons=[Button.inline("Info.", data="ownerinfoo")],
                 )
             else:
                 me = f"[{ultroid_bot.me.first_name}](tg://user?id={ultroid_bot.uid})"
                 mention = f"[{get_display_name(u)}](tg://user?id={u.id})"
                 await event.reply(
                     Redis("STARTMSG").format(me=me, mention=mention),
-                    buttons=[InlineKeyboardButton("Owner's Channel", url="https://t.me/saibubo")],
+                    buttons=[Button.inline("Info.", data="ownerinfoo")],
                 )
         else:
             name = get_display_name(event.sender_id)
