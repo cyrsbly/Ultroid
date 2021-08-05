@@ -10,8 +10,8 @@ ENV TZ=Asia/Manila
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # clone the repo and change workdir
-RUN git clone https://github.com/cyrsbly/Ultroid.git /root/cyrsbly/
-WORKDIR /root/cyrsbly/
+RUN git clone https://github.com/TeamUltroid/Ultroid.git /root/TeamUltroid/
+WORKDIR /root/TeamUltroid/
 
 # install main requirements.
 COPY requirements.txt /deploy/
