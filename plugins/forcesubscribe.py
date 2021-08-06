@@ -109,7 +109,7 @@ async def diesoon(e):
         await ultroid_bot(GetParticipantRequest(int(spli[1]), int(spli[0])))
     except UserNotParticipantError:
         return await e.answer(
-            "Please Join That Channel !\nThen Click This Button !", alert=True
+            "Join that Channel first then click this button.", alert=True
         )
     await ultroid_bot.edit_permissions(
         e.chat_id, int(spli[0]), send_messages=True, until_date=None
