@@ -307,7 +307,7 @@ async def hehe(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"ult_{user.id}_{pack}"
-                    packnick = f"@{user.username}'s Pack {pack}"
+                    packnick = f"Stix Pack by @ppnaravxt. "
                     await xx.edit(
                         "`Switching to Pack "
                         + str(pack)
