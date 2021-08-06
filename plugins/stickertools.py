@@ -207,7 +207,7 @@ async def pack_kangish(_):
 
 
 @ultroid_cmd(
-    pattern="kang",
+    pattern="kkang",
 )
 async def hehe(args):
     ultroid_bot = args.client
