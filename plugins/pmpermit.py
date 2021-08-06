@@ -777,13 +777,13 @@ async def in_pm_ans(event):
         [
             await event.builder.article(
                 title="Inline PMPermit.",
-                text=f"**PMSecurity of {OWNER_NAME}!**",
+                text=f"**Userbot of {OWNER_NAME}!**",
                 buttons=[
                     [
                         Button.inline("Warns", data=f"admin_only{from_user}"),
                         Button.inline(wrns, data="do_nothing"),
                     ],
-                    [Button.inline("Don't Spam! Please. Thanks.", data=f"ownerinfoo")],
+                    [Button.inline("Waiting for Mork...", data=f"do_nothing")],
                 ],
             )
         ]
@@ -839,7 +839,7 @@ async def edt(event):
                 Button.inline("Warns", data=f"admin_only{from_user}"),
                 Button.inline(wrns, data="do_nothing"),
             ],
-            [Button.inline("Don't Spam! Please. Thanks.", data=f"ownerinfoo")],
+            [Button.inline("Don't Spam!", data=f"do_nothing")],
         ],
     )
 
