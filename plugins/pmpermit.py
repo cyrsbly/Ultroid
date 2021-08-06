@@ -783,7 +783,7 @@ async def in_pm_ans(event):
                         Button.inline("Warns", data=f"admin_only{from_user}"),
                         Button.inline(wrns, data="do_nothing"),
                     ],
-                    [Button.inline("Message 📫", data=f"m_{from_user}")],
+                    [Button.inline("Don't Spam! Please. Thanks.", data=f"ownerinfoo")],
                 ],
             )
         ]
@@ -839,7 +839,7 @@ async def edt(event):
                 Button.inline("Warns", data=f"admin_only{from_user}"),
                 Button.inline(wrns, data="do_nothing"),
             ],
-            [Button.inline("Message 📫", data=f"m_{from_user}")],
+            [Button.inline("Don't Spam! Please. Thanks.", data=f"ownerinfoo")],
         ],
     )
 
