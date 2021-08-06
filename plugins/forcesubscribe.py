@@ -80,8 +80,8 @@ async def fcall(e):
     spli = match.split("_")
     user = await e.client.get_entity(int(spli[0]))
     cl = await e.client.get_entity(int(spli[1]))
-    text = f"Hi [{user.first_name}](tg://user?id={user.id}), You Need to Join"
-    text += f" {cl.title} in order to Chat in this Group."
+    text = f"Hi [{user.first_name}](tg://user?id={user.id}), you need to follow"
+    text += f" this channel {cl.title} in order to chat in this Group."
     if not cl.username:
         el = (await e.client(ExportChatInviteRequest(cl))).link
     else:
@@ -91,8 +91,8 @@ async def fcall(e):
             title="forcesub",
             text=text,
             buttons=[
-                [Button.url(text="Join Channel", url=el)],
-                [Button.inline("Unmute Me", data=f"unm_{match}")],
+                [Button.url(text=">>> Join Channel <<< ", url=el)],
+                [Button.inline("> Unmute Me! <", data=f"unm_{match}")],
             ],
         )
     ]
@@ -114,4 +114,4 @@ async def diesoon(e):
     await ultroid_bot.edit_permissions(
         e.chat_id, int(spli[0]), send_messages=True, until_date=None
     )
-    await e.edit("Thanks For Joining ! ")
+    await e.edit("User unmuted. Welcome to the group!")
