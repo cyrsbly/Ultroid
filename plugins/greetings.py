@@ -42,7 +42,7 @@ from . import *
 Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
 
 
-@ultroid_cmd(pattern="setwelcome")
+@ultroid_cmd(pattern="ssetwelcome")
 async def setwel(event):
     x = await eor(event, get_string("com_1"))
     r = await event.get_reply_message()
@@ -79,7 +79,7 @@ async def setwel(event):
         await eod(x, "`Reply to message which u want to set as welcome`")
 
 
-@ultroid_cmd(pattern="clearwelcome$")
+@ultroid_cmd(pattern="cclearwelcome$")
 async def clearwel(event):
     if not get_welcome(event.chat_id):
         await eod(event, "`No welcome was set!`", time=5)
@@ -98,7 +98,7 @@ async def listwel(event):
     await event.delete()
 
 
-@ultroid_cmd(pattern="setgoodbye")
+@ultroid_cmd(pattern="ssetgoodbye")
 async def setgb(event):
     x = await eor(event, get_string("com_1"))
     r = await event.get_reply_message()
@@ -135,7 +135,7 @@ async def setgb(event):
         await eod(x, "`Reply to message which u want to set as goodbye`")
 
 
-@ultroid_cmd(pattern="cleargoodbye$")
+@ultroid_cmd(pattern="ccleargoodbye$")
 async def clearwgb(event):
     if not get_goodbye(event.chat_id):
         await eod(event, "`No goodbye was set!`", time=5)
@@ -143,7 +143,7 @@ async def clearwgb(event):
     await eod(event, "`Goodbye Note Deleted`")
 
 
-@ultroid_cmd(pattern="getgoodbye$")
+@ultroid_cmd(pattern="ggetgoodbye$")
 async def listgd(event):
     wel = get_goodbye(event.chat_id)
     if not wel:
@@ -154,7 +154,7 @@ async def listgd(event):
     await event.delete()
 
 
-@ultroid_cmd(pattern="thankmembers (on|off)")
+@ultroid_cmd(pattern="tthankmembers (on|off)")
 async def thank_set(event):
     type_ = event.pattern_match.group(1)
     if not type_ or type_ == "":
