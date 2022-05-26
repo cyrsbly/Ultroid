@@ -58,7 +58,7 @@ async def _(e):
     elif t.endswith(("s", "h", "d", "m")):
         t = math.ceil((ban_time(e, t)) - time.time())
     else:
-        t = 60
+        t = 1200
     await e.eor(get_string("fka_1").format(str(t)), time=5)
     async with e.client.action(e.chat_id, act):
         await asyncio.sleep(t)
